@@ -1,0 +1,7 @@
+# data/ and results/ ARE committed (reproducibility snapshot); only caches are ignored
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.txt
+!data/raw/*.txt.gz
+!requirements*.txt

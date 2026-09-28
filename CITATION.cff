@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this code or data snapshot, please cite it as below, together with the original data sources listed in data/README.md."
+title: "fuzzy-key-employees: code and data for Hidden Key Employees in Informal Communication Networks"
+authors:
+  - family-names: Altaf
+    given-names: Sahar
+    affiliation: "Karachi Institute of Economics and Technology"
+    orcid: "https://orcid.org/0009-0001-4846-2939"
+  - family-names: Hussain
+    given-names: Nasir
+    affiliation: "Karachi Institute of Economics and Technology"
+    orcid: "https://orcid.org/0000-0003-0157-8480"
+repository-code: "https://github.com/nasirhussain92/fuzzy-key-employees"
+license: MIT
