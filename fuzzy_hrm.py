@@ -322,8 +322,8 @@ def run_scenarios(V, mu, ks, wave=0.05, n_random_runs=100, seed=2026):
         rand.append(simulate(V, mu, arcs, order, K)[["R", "T", "disconnected", "lcc_share"]].mean())
     rd = pd.DataFrame(rand)
     row = {"strategy": "S6 Random (mean)", **rd.mean().to_dict()}
-    row["L_S 95% CI"] = (rd.R.mean() - 1.96 * rd.R.std(ddof=1) / math.sqrt(n_random_runs),
-                         rd.R.mean() + 1.96 * rd.R.std(ddof=1) / math.sqrt(n_random_runs))
+    half = 1.96 * rd.R.std(ddof=1) / math.sqrt(n_random_runs)
+    row["CI_low"], row["CI_high"] = rd.R.mean() - half, rd.R.mean() + half   # 95% CI of L_S for S6
     out.append(row)
     res = pd.DataFrame(out).rename(columns={"R": "L_S (mean R)"})
     return res
