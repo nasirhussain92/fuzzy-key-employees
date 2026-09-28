@@ -1,0 +1,38 @@
+{
+  "date_utc": "2026-09-28T17:26:17Z",
+  "code_commit": "4325f509c09763e589d02eed99e49e6689052daa",
+  "data_source": "repository snapshot (checksums verified)",
+  "data_sha256": {
+    "email-Eu-core-temporal.txt.gz": "f6cc93249978e59d1aba111b55ea10ec553917419a3be1210012b5db3580efa6",
+    "email-Eu-core-department-labels.txt.gz": "e5abe5b4581a480032a63adcf2576c161785f45692642c6ebb0b1276f0f33669"
+  },
+  "parameters": {
+    "lambda": "lambda0 = ln2 / median positive w_uv",
+    "eta_main": 0,
+    "eta0": "2 ln2 / H",
+    "departure_waves": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "materiality_p": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "n_random_runs": 100,
+    "seed": 2026,
+    "robustness": {
+      "tau_min": 0.7,
+      "jaccard_min": 0.5,
+      "top_group_p": 0.05
+    }
+  },
+  "python": "3.13.15",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "networkx": "3.6.1",
+    "scipy": "1.16.3"
+  }
+}

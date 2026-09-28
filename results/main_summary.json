@@ -1,0 +1,13 @@
+{
+  "employees": 986,
+  "arcs": 16064,
+  "distinct_levels": 7458,
+  "NCI": 0.37390404079399636,
+  "fuzzy_cutvertices": 270,
+  "hidden": 197,
+  "material_p1": 4,
+  "material_p5": 24,
+  "material_p10": 56,
+  "fuzzy_bridges": 845,
+  "inter_department_bridges": 802
+}

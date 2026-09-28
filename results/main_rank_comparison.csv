@@ -1,0 +1,5 @@
+strategy,kendall_tau_vs_KS,top10_shared,top20_shared,top50_shared
+S2 Crisp degree,0.417873281913379,1,2,13
+S3 Crisp betweenness,0.4942251538314885,1,3,17
+S4 Weighted degree,0.42693864701355655,2,4,13
+S5 Weighted betweenness,0.6333123769589347,3,5,18
