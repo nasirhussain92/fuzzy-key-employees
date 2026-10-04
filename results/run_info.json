@@ -1,7 +1,8 @@
 {
-  "date_utc": "2026-09-28T17:26:17Z",
-  "code_commit": "4325f509c09763e589d02eed99e49e6689052daa",
+  "date_utc": "2026-09-28T22:44:40+00:00",
+  "code_commit": "3fbc32693ff10078e575493a2c011ca9c39e9a43",
   "data_source": "repository snapshot (checksums verified)",
+  "fresh_run": true,
   "data_sha256": {
     "email-Eu-core-temporal.txt.gz": "f6cc93249978e59d1aba111b55ea10ec553917419a3be1210012b5db3580efa6",
     "email-Eu-core-department-labels.txt.gz": "e5abe5b4581a480032a63adcf2576c161785f45692642c6ebb0b1276f0f33669"

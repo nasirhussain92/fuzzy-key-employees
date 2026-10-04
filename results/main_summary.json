@@ -9,5 +9,8 @@
   "material_p5": 24,
   "material_p10": 56,
   "fuzzy_bridges": 845,
-  "inter_department_bridges": 802
+  "pendant_bridges": 95,
+  "nonpendant_bridges": 750,
+  "max_nonpendant_bridges_one_employee": 26,
+  "bridge_hubs_in_top5_KS": "20 of 50"
 }
