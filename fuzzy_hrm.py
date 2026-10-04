@@ -28,7 +28,11 @@ def load_eu_core_temporal(path):
 
 
 def load_eu_core_departments(path):
-    """SNAP email-Eu-core-department-labels: 'node department'."""
+    """SNAP email-Eu-core-department-labels: 'node department'.
+
+    Auxiliary only: not used in the analysis, because the SNAP documentation states
+    that the static and temporal releases use different node IDs.
+    """
     df = pd.read_csv(path, sep=r"\s+", header=None, names=["node", "department"])
     return dict(zip(df.node, df.department))
 
