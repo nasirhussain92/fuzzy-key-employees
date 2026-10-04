@@ -10,4 +10,4 @@ This folder holds a fixed snapshot of the public data used in the paper, so ever
 
 The notebook checks both files against `SHA256SUMS` before use and stops if a checksum does not match. The files are unchanged copies of the SNAP originals; please cite the sources above when using them.
 
-The department labels belong to the static email-Eu-core release. Matched to the temporal data by node ID, the same-department share of linked pairs equals the chance level (0.048), so the IDs of the two releases do not correspond and the labels are not used in the analysis. The notebook reproduces this check (`results/department_label_check.json`).
+The department labels belong to the static email-Eu-core release and are not used in the analysis, because the SNAP documentation states that the static and temporal releases use different node IDs. The notebook additionally reports the same-department share of linked pairs under an ID match (`results/department_label_check.json`); it equals the chance level, consistent with the documentation.
