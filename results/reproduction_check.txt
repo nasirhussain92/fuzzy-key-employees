@@ -1,0 +1,56 @@
+REPRODUCTION CHECK
+==================
+Purpose: independent re-computation of the published results from the archived data snapshot,
+on a machine and software environment different from the one that produced results/.
+
+Published run (results/run_info.json)
+  code commit        : 3fbc32693ff10078e575493a2c011ca9c39e9a43
+  date               : 2026-09-28T22:44:40+00:00
+  python / packages  : 3.13.15 / numpy 2.1.3, pandas 2.2.3, networkx 3.6.1, scipy 1.16.3
+  seed               : 2026
+
+Reproduction environment
+  code and data      : main branch of this repository (same fuzzy_hrm.py computations as the published commit)
+  python             : 3.12.3 (Linux x86_64)
+  packages           : numpy 2.4.4, pandas 3.0.2, networkx 3.6.1, scipy 1.17.1
+  seed               : 2026 (same as published run)
+
+Data snapshot (SHA-256, verified against data/SHA256SUMS)
+  email-Eu-core-department-labels.txt.gz: e5abe5b4581a480032a63adcf2576c161785f45692642c6ebb0b1276f0f33669
+  email-Eu-core-temporal.txt.gz: f6cc93249978e59d1aba111b55ea10ec553917419a3be1210012b5db3580efa6
+
+Comparison (reproduced value vs. file in results/)
+  main_summary.json (counts and NCI)          : identical
+  KS of all 986 members                        : max abs difference 9.9e-17
+  deterministic scenario outcomes (S1-S5)      : 240 values, max abs difference 1.2e-16
+  random baseline S6, main setting, 5% wave    : abs difference 9.6e-17
+  robustness (tau, Jaccard), three settings    : max abs difference 0.0e+00
+  lambda_x0.5  tau 0.772468 (repo 0.772468)  Jaccard 0.612903 (repo 0.612903)
+  lambda_x2    tau 0.815228 (repo 0.815228)  Jaccard 0.666667 (repo 0.666667)
+  eta0         tau 0.767296 (repo 0.767296)  Jaccard 0.724138 (repo 0.724138)
+  tolerance used                               : 1e-12 (all differences are at floating-point rounding level)
+
+Result: REPRODUCED
+
+SHA-256 of the compared result files
+  department_label_check.json: 7e87dadc476b311c4fc5f5f48e3a5051b7154a42218658a4a43952f5ba5b0865
+  main_employee_scores.csv: 38f204a59304349ba2edc779242feaf1d2544a99a6ceea0f466b387f96d5fc6d
+  main_fuzzy_bridges.csv: ce51d3f13507b7ebac8aa1b3795f8c7b7f82b0e8a2999608f0dab15ab54efdf0
+  main_rank_comparison.csv: 3ba1e56ea36a8e7b08d5107cda082aaf2fd4f5bffc8bb384bf0a41139c91f2b4
+  main_summary.json: ec666c1829e0d3806020c01f1cb08a103081dc135f64e238c852832d7b2cb87a
+  robustness.csv: e2fd40a7822df7858bfa48d5c11f2c042331a7bfb7aa5d14186afbd7f85e6eae
+  robustness_compact.csv: fd789e0cb405d10f2fa0be9d64a169562aa9f028d8c04906a2013ccf2e066ae4
+  run_info.json: 0c8f43b8b6f732816bbfcea2dc11435cb60202aa9ed8d56b6fc7996fccf861e8
+  scenarios_all.csv: efb18084febb1a668e13f4e43c23e7b421b4374109ed385f886486be3b195087
+  scenarios_eta0_K1.csv: 08b7e3fa0843e367a1896a78f448d23dc9f5cd58290be693d72e4478a4a25761
+  scenarios_eta0_K10.csv: 1fccf67acdfa22ed965e7ff86b97d351feb826ae32d7f20d9d4a753f13df8e5c
+  scenarios_eta0_K5.csv: 0831120a4672d517c61daa77b9d74c32467fc2fa8df2e03955777678daaefbf7
+  scenarios_lambda_x0.5_K1.csv: 8587db83681d05f98d9a63538773f0cc55d5d7c94589eb3bdd0ca7a4c9c745ec
+  scenarios_lambda_x0.5_K10.csv: 7ebd41a252560df596a255d10af6c8f5472519342dcfe209c0746871500de03d
+  scenarios_lambda_x0.5_K5.csv: 0f2a3e599c88aebb97e97ae29284abc5171b5cf9e32070bc4860d3a284120ad0
+  scenarios_lambda_x2_K1.csv: 4747caefdb2e8d539a635989d7ede98271c5e8ab205758bd77e534d8a7feb9d4
+  scenarios_lambda_x2_K10.csv: b2ccda0dbc39be7d97aa1b7d01f087f534eaefbeca85a2676c1ab7e9f374c69c
+  scenarios_lambda_x2_K5.csv: 3a52d3dcbb47e91c03713821af2d93fab92f5a861fbd4544e336c8fe03cb33b8
+  scenarios_main_K1.csv: 22b8db59b2b1245b48df5235b99461167b725c35c5d08a11521e6b3cc3f4f7e4
+  scenarios_main_K10.csv: 8a5b351eaa3408e1427c262542e443d7a9adcf98dc597d0f29b84c67c61880f9
+  scenarios_main_K5.csv: 3ae81e3486a55ba0514f55d3cc1ee1b01c480c8041dfeb2bc8e3effe95757220
