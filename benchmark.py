@@ -56,7 +56,7 @@ if __name__ == "__main__":
     t = tick("fuzzy cutvertices / hidden / material", t)
     print("      fuzzy cutvertices %d, hidden %d, material (top 5%% by KS) %d" % (len(fuzzy_cut), len(hidden), len(material)))
     B = fh.fuzzy_bridges(V, mu, arcs)
-    t = tick("fuzzy bridges (Lemma A.1)", t)
+    t = tick("fuzzy bridges (Lemma S.1)", t)
     print("      fuzzy bridges %d" % len(B))
     res = fh.run_scenarios(V, mu, ks, wave=0.05, n_random_runs=runs)
     t = tick("departure scenarios S1-S6, K=5%%, N_r=%d" % runs, t)

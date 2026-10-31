@@ -1,10 +1,11 @@
 """
 fuzzy_hrm.py
 Implementation of the fuzzy graph model in
-"Hidden Key Employees in Informal Communication Networks:
- A Fuzzy Graph Model of Key-Person Risk for Human Resource Planning".
+"Survivor Loss and Fuzzy Cutvertices: Mathematical Modelling of
+ Key-Person Risk in Informal Communication Networks"
+(Sahar Altaf, Nasir Hussain and Sumaira Yousuf Khan).
 
-Section references (Sec. 3.x, 4.x, Appendix A.x) point to the manuscript.
+Section references (Sec. 3.x, 4.x, Supplementary Material S1-S3) point to the manuscript.
 Only standard libraries plus numpy, pandas and networkx are used.
 """
 from __future__ import annotations
@@ -170,7 +171,7 @@ def forest_adjacency(forest):
 
 
 # ----------------------------------------------------------------------
-# Departure measures (Def. 3.16, Cor. 4.1, Appendix A.2)
+# Departure measures (Def. 3.16, Cor. 4.1, Supplementary Material S2)
 # ----------------------------------------------------------------------
 def departure_measures(V, arcs, S, QG=None, adj=None):
     """Return (R(S), T(S)) for a departing set S."""
@@ -181,7 +182,7 @@ def departure_measures(V, arcs, S, QG=None, adj=None):
     rows = {s: conn_row(adj, s) for s in S}
     own = sum(sum(r.values()) for r in rows.values())
     inner = sum(rows[s].get(t, 0.0) for s in S for t in S if s < t) if len(S) > 1 else 0.0
-    Q_surv = QG - own + inner          # inclusion-exclusion (Appendix A.2)
+    Q_surv = QG - own + inner          # inclusion-exclusion (Supplementary Material S2)
     Q_after, _ = capacity(V, arcs, removed=S)
     tol = 1e-9 * max(QG, 1.0)          # inclusion-exclusion leaves float round-off
     R = (Q_surv - Q_after) / Q_surv if Q_surv > tol else 0.0
@@ -200,10 +201,10 @@ def key_person_scores(V, arcs):
 
 
 # ----------------------------------------------------------------------
-# Structure: bridges, cutvertices, hidden key employees (Sec. 4.4, App. A.3)
+# Structure: bridges, cutvertices, hidden key employees (Sec. 4.4, Suppl. S3)
 # ----------------------------------------------------------------------
 def fuzzy_bridges(V, mu, arcs):
-    """Lemma A.1: search only forest arcs; e is a bridge iff u,v disconnected in H_mu(e) - e."""
+    """Lemma S.1: search only forest arcs; e is a bridge iff u,v disconnected in H_mu(e) - e."""
     _, forest = capacity(V, arcs)
     bridges = []
     for a, b, m in forest:
@@ -226,7 +227,7 @@ def crisp_graph(V, mu):
 
 
 def algorithm1(V, mu):
-    """Algorithm 1 (Appendix A.3), used as an independent cross-check."""
+    """Algorithm 1 (Supplementary Material S3), used as an independent cross-check."""
     levels = sorted(set(mu.values()), reverse=True)
     B, C = set(), set()
     for t in levels:

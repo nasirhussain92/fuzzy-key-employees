@@ -1,6 +1,6 @@
 # fuzzy-key-employees
 
-Code, data snapshot and results for *Hidden Key Employees in Informal Communication Networks: A Fuzzy Graph Model of Key-Person Risk for Human Resource Planning* (Sahar Altaf and Nasir Hussain, Karachi Institute of Economics and Technology).
+Code, data snapshot and results for *Survivor Loss and Fuzzy Cutvertices: Mathematical Modelling of Key-Person Risk in Informal Communication Networks* (Sahar Altaf and Nasir Hussain, Karachi Institute of Economics and Technology; Sumaira Yousuf Khan, Dawood University of Engineering and Technology). The working title of the manuscript was *Hidden Key Employees in Informal Communication Networks*; the code and results are unchanged. The reported results were produced with code commit 3fbc326; later commits change only documentation, comments and author information.
 
 ## Repository structure
 
@@ -11,9 +11,13 @@ fuzzy-key-employees/
 ├── CITATION.cff              # how to cite; authors with ORCID
 ├── requirements.txt          # minimum package versions
 ├── .gitignore
-├── fuzzy_hrm.py              # the model (manuscript Sections 3–4, Appendix A)
+├── fuzzy_hrm.py              # the model (manuscript Sections 3–4, Supplementary Material)
 ├── verify.py                 # brute-force checks; must print ALL CHECKS PASSED
 ├── benchmark.py              # synthetic speed test (not findings)
+├── make_figures.py           # draws Figures 2–3 from results/ (python make_figures.py)
+├── figures/                  # figure2.png, figure3.png (600 dpi)
+├── supplement/
+│   └── Supplementary_Material.pdf  # proofs and implementation details (S1–S3)
 ├── notebooks/
 │   └── fuzzy_hrm_colab.ipynb # full analysis in Google Colab
 ├── data/

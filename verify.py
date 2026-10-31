@@ -4,9 +4,9 @@ verify.py - checks the implementation against the definitions by brute force.
 1. Section 3.6 example: reproduces the published table (R, T, crisp and weighted betweenness).
 2. Random fuzzy graphs (with and without tied memberships):
    - Prop. 4.2 / Lemma 4.1: Q(G) from the spanning forest = brute-force sum of CONN
-   - Cor. 4.1 / App. A.2:   R(S), T(S) = brute force, for single employees and for sets
+   - Cor. 4.1 / Suppl. S2:   R(S), T(S) = brute force, for single employees and for sets
    - Prop. 3.2:             KS(w) > 0  <=>  w is a fuzzy cutvertex (Def. 3.12)
-   - Lemma A.1 / Prop. 4.3: forest-based fuzzy bridges = Def. 3.11 = Algorithm 1
+   - Lemma S.1 / Prop. 4.3: forest-based fuzzy bridges = Def. 3.11 = Algorithm 1
    - Prop. 4.3(2):          Algorithm 1 cutvertices = {KS > 0}
 """
 import itertools
@@ -119,7 +119,7 @@ def check_random(trials=150, seed=7):
         for w in V:                                                          # Cor 4.1
             r, tb = brute_R_T(V, mu, [w])
             ok &= abs(ks[w] - r) < 1e-9 and abs(tt[w] - tb) < 1e-9
-        S = rng.sample(V, 3)                                                 # App. A.2 (sets)
+        S = rng.sample(V, 3)                                                 # Suppl. S2 (sets)
         r, tb = brute_R_T(V, mu, S)
         rs, ts = fh.departure_measures(V, arcs, S)
         ok &= abs(rs - r) < 1e-9 and abs(ts - tb) < 1e-9
@@ -127,7 +127,7 @@ def check_random(trials=150, seed=7):
         ok &= cut == {w for w in V if ks[w] > 1e-12}                        # Prop 3.2
         B, C, H = fh.algorithm1(V, mu)
         fb = {tuple(sorted(e)) for e in fh.fuzzy_bridges(V, mu, arcs)}
-        ok &= fb == brute_bridges(V, mu) == B                               # Lemma A.1, Prop 4.3(1)
+        ok &= fb == brute_bridges(V, mu) == B                               # Lemma S.1, Prop 4.3(1)
         ok &= C == cut                                                       # Prop 4.3(2)
         if not ok:
             fails += 1

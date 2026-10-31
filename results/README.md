@@ -16,6 +16,6 @@ Produced by `notebooks/fuzzy_hrm_colab.ipynb` from the data snapshot in `data/` 
 | `scenarios_all.csv` | All scenario runs in one table | — |
 | `robustness_compact.csv` | τ, Jaccard and S1 rank per sensitivity setting | Table 10 |
 | `robustness.csv` | The same, per setting and wave | Table 10 |
-| `department_label_check.json` | Same-department share under an ID match versus chance | Section 4.1 (labels not used) |
+| `department_label_check.json` | **Auxiliary diagnostic only – not used in the reported analysis.** Same-department share of linked pairs if the static release's labels are matched to the temporal data by node ID, compared with chance | None (the manuscript, Section 4.1, cites the SNAP documentation instead) |
 
 Note: the files use the column name `employees` for network nodes; in the manuscript these are reported as members, because the dataset does not record employment status.

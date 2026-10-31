@@ -5,9 +5,9 @@ This folder holds a fixed snapshot of the public data used in the paper, so ever
 | File | Source | Citation | Use |
 | --- | --- | --- | --- |
 | `raw/email-Eu-core-temporal.txt.gz` | Stanford SNAP, https://snap.stanford.edu/data/email-Eu-core-temporal.html | Paranjape, Benson & Leskovec (2017) | All analyses |
-| `raw/email-Eu-core-department-labels.txt.gz` | Stanford SNAP, https://snap.stanford.edu/data/email-Eu-core.html | Yin, Benson, Leskovec & Gleich (2017) | Node-ID check only (Section 4.1) |
+| `raw/email-Eu-core-department-labels.txt.gz` | Stanford SNAP, https://snap.stanford.edu/data/email-Eu-core.html | Yin, Benson, Leskovec & Gleich (2017) | Auxiliary diagnostic only; not used in the reported analysis |
 | `SHA256SUMS` | Created when the snapshot was downloaded | — | Integrity check |
 
 The notebook checks both files against `SHA256SUMS` before use and stops if a checksum does not match. The files are unchanged copies of the SNAP originals; please cite the sources above when using them.
 
-The department labels belong to the static email-Eu-core release and are not used in the analysis, because the SNAP documentation states that the static and temporal releases use different node IDs. The notebook additionally reports the same-department share of linked pairs under an ID match (`results/department_label_check.json`); it equals the chance level, consistent with the documentation.
+The department labels belong to the static email-Eu-core release and are not used in the analysis, because the SNAP documentation states that the static and temporal releases use different node IDs. As an auxiliary diagnostic, not used in the reported analysis, the notebook also records the same-department share of linked pairs under an ID match (`results/department_label_check.json`); it equals the chance level, consistent with the documentation. The file is kept in the repository only so that this check can be repeated.
